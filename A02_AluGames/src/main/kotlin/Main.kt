@@ -1,3 +1,4 @@
+import com.google.gson.Gson
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
@@ -15,9 +16,11 @@ fun main() {
         .send(request, BodyHandlers.ofString())
 
     val json = response.body()
+
     println(json)
 
-    val meujogo = Jogo(
+   /*
+   val meujogo = Jogo(
         "Batman: Arkham Asylum Game of the Year Edition",
         "https:\\/\\/cdn.cloudflare.steamstatic.com\\/steam\\/apps\\/35140\\/capsule_sm_120.jpg?t=1702934705")
     //meujogo.titulo = "Batman: Arkham Asylum Game of the Year Edition"
@@ -28,5 +31,10 @@ fun main() {
         capa =  "https:\\/\\/cdn.cloudflare.steamstatic.com\\/steam\\/apps\\/35140\\/capsule_sm_120.jpg?t=1702934705",
         titulo = "Batman: Arkham Asylum Game of the Year Edition")
     println(novoJogo.toString())
+    */
+
+    val gson = Gson()
+    val meuJogo = gson.fromJson(json, Jogo::class.java)
+    println(meuJogo)
 
 }
