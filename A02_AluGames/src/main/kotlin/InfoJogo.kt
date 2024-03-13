@@ -1,5 +1,5 @@
 
-class InfoJogo(val info: InfoAPIShark) {
+data class InfoJogo(val info: InfoAPIShark) {
 
     override fun toString(): String {
 

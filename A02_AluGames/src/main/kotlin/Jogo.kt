@@ -1,6 +1,4 @@
-import com.google.gson.annotations.SerializedName
-
-class Jogo(
+data class Jogo(
    val titulo: String,
    val capa: String
 ) {
