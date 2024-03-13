@@ -17,7 +17,7 @@ fun main() {
 
     val json = response.body()
 
-    println(json)
+    //println(json)
 
    /*
    val meujogo = Jogo(
@@ -34,9 +34,14 @@ fun main() {
     */
 
     val gson = Gson()
+    val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
 
-    val meuJogo = gson.fromJson(json, InfoJogo::class.java)
+    val meuJogo = Jogo(
+        meuInfoJogo.info.title,
+        meuInfoJogo.info.thumb
+    )
 
     println(meuJogo)
+
 
 }
