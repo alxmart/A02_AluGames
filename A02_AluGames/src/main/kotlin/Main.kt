@@ -1,9 +1,7 @@
-
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse.BodyHandlers
-
 
 fun main() {
 
@@ -20,7 +18,9 @@ fun main() {
     println(json)
 
     val meujogo = Jogo()
+    meujogo.titulo = "Batman: Arkham Asylum Game of the Year Edition"
+    meujogo.capa = "https:\\/\\/cdn.cloudflare.steamstatic.com\\/steam\\/apps\\/35140\\/capsule_sm_120.jpg?t=1702934705"
 
-
+    println(meujogo.toString())
 
 }
