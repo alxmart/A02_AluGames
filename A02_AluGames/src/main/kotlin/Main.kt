@@ -16,24 +16,33 @@ fun main() {
         .send(request, BodyHandlers.ofString())
 
     val json = response.body()
+    println(json)
 
-    //println(json)
-
-   /*
-   val meujogo = Jogo(
+    /*
+    val meuJogo = Jogo(
         "Batman: Arkham Asylum Game of the Year Edition",
-        "https:\\/\\/cdn.cloudflare.steamstatic.com\\/steam\\/apps\\/35140\\/capsule_sm_120.jpg?t=1702934705")
-    //meujogo.titulo = "Batman: Arkham Asylum Game of the Year Edition"
-    //meujogo.capa = "https:\\/\\/cdn.cloudflare.steamstatic.com\\/steam\\/apps\\/35140\\/capsule_sm_120.jpg?t=1702934705"
-    println(meujogo.toString())
+        "https://cdn.cloudflare.steamstatic.com/steam/apps/35140/capsule_sm_120.jpg?t=1702934705"
+    )
 
     val novoJogo = Jogo(
-        capa =  "https:\\/\\/cdn.cloudflare.steamstatic.com\\/steam\\/apps\\/35140\\/capsule_sm_120.jpg?t=1702934705",
-        titulo = "Batman: Arkham Asylum Game of the Year Edition")
+        capa = "Batman: Arkham Asylum Game of the Year Edition",
+        titulo = "https://cdn.cloudflare.steamstatic.com/steam/apps/35140/capsule_sm_120.jpg?t=1702934705"
+    )
+    */
+
+    /*
+    meujogo.titulo = "Batman: Arkham Asylum Game of the Year Edition"
+    meujogo.capa = "https://cdn.cloudflare.steamstatic.com/steam/apps/35140/capsule_sm_120.jpg?t=1702934705"
+    */
+
+    /*
+    println(meuJogo.toString())
+    println()
     println(novoJogo.toString())
     */
 
     val gson = Gson()
+
     val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
 
     val meuJogo = Jogo(
